@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:gravity="center_horizontal"
+        android:id="@+id/route_detail_image"
+        android:src="@drawable/bg_image_hint"
+        android:layout_width="match_parent"
+        android:layout_height="266dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"
+        />
+    <TextView
+        android:id="@+id/route_detail_tv"
+        android:layout_below="@id/route_detail_image"
+        android:padding="15dp"
+        android:textColor="#ff555555"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

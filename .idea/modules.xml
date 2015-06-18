@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/QingHaiTravel.iml" filepath="$PROJECT_DIR$/QingHaiTravel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_xUtils/library_xUtils.iml" filepath="$PROJECT_DIR$/library_xUtils/library_xUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobileTravel/mobileTravel.iml" filepath="$PROJECT_DIR$/mobileTravel/mobileTravel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerview/recyclerview.iml" filepath="$PROJECT_DIR$/recyclerview/recyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
+    </modules>
+  </component>
+</project>

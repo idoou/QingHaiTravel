@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/root_container"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/base_grey_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_action_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/divider_common"
+            android:orientation="vertical"
+            android:showDividers="beginning|middle|end" >
+
+            <include
+                android:id="@+id/item_avatar"
+                layout="@layout/item_settings" />
+
+            <include
+                android:id="@+id/item_name"
+                layout="@layout/item_settings" />
+
+            <include
+                android:id="@+id/item_phone"
+                layout="@layout/item_settings" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

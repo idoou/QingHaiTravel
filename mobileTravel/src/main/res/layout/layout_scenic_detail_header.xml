@@ -1,0 +1,385 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/ll_header"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <com.ziyou.selftravel.widget.MaterialRippleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:rippleInterceptTouchEvent="false" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="167dp"
+            android:addStatesFromChildren="false" >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/scenic_cover_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_banner_hint"
+                android:contentDescription="@string/content_description"
+                android:scaleType="centerCrop" >
+            </com.android.volley.toolbox.NetworkImageView>
+
+            <TextView
+                android:id="@+id/scenic_wish_to_go"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="@dimen/common_margin"
+                android:background="@drawable/tag_badge_bg"
+                android:drawableLeft="@drawable/wish_to_go"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/scenery_detail_wish_to_go"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/fg_bottom_shadow" />
+
+            <TextView
+                android:id="@+id/scenic_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="@dimen/common_margin"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:visibility="gone"
+                />
+
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="@dimen/common_margin"
+                layout="@layout/layout_weather_view" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="@dimen/common_margin"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/content_description"
+                    android:src="@drawable/location" />
+
+                <TextView
+                    android:id="@+id/nearby_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="0人在附近"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </FrameLayout>
+    </com.ziyou.selftravel.widget.MaterialRippleLayout>
+
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/scenery_detail_funcs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/base_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/common_margin"
+        android:paddingRight="@dimen/common_margin" >
+
+        <TextView
+            android:id="@+id/scenic_detail_func_listen"
+            style="@style/scenery_detail_func_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/scenery_detail_func_listen_selecter"
+            android:text="@string/scenery_detail_func_listen" />
+
+        <TextView
+            android:id="@+id/scenic_detail_func_live"
+            style="@style/scenery_detail_func_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/scenery_detail_func_live_selecter"
+            android:text="@string/scenery_detail_func_live" />
+
+        <TextView
+            android:id="@+id/scenic_detail_func_navi"
+            style="@style/scenery_detail_func_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/scenery_detail_func_navi_selecter"
+            android:text="@string/scenery_detail_func_navi" />
+
+        <TextView
+            android:id="@+id/scenic_detail_func_service"
+            style="@style/scenery_detail_func_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/scenery_detail_func_service_selecter"
+            android:text="@string/scenery_detail_func_service" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:background="@color/base_grey_line" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/base_grey_line" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/base_bg"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/common_margin" >
+
+        <LinearLayout
+            android:id="@+id/scenic_intro_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/scenic_intro_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scenery_detail_play_title"
+                    android:textSize="16sp" />
+
+                <RatingBar
+                    android:id="@+id/scenic_rating"
+                    style="@style/rating_bar_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:isIndicator="true"
+                    android:progressDrawable="@drawable/layerlist_detail_star_small" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/scenic_intro_summary"
+                style="@style/scenery_detail_summary_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text="@string/scenery_detail_play_summary"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/scenic_detail_download"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/common_margin"
+                android:layout_marginRight="@dimen/common_margin"
+                android:background="@color/base_grey_line" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/content_description"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:src="@drawable/scenery_detail_download_selecter" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/base_grey_line" />
+
+    <com.ziyou.selftravel.widget.ExpandableTextView
+        android:id="@+id/scenic_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/base_bg"
+        android:orientation="horizontal"
+        android:padding="@dimen/common_margin"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/expandable_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/common_margin"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:textColor="#8C8C8C"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/expand_collapse"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_gravity="bottom|right"
+            android:contentDescription="@string/content_description"
+            android:src="@drawable/ic_arrow_expand_selecter"
+            android:visibility="gone" />
+    </com.ziyou.selftravel.widget.ExpandableTextView>
+
+    <LinearLayout
+        android:padding="20dp"
+        android:background="@color/base_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/survey_tv"
+            android:text="概况"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/base_grey_line" />
+
+        <TextView
+            android:id="@+id/survey_detail_tv"
+            android:layout_marginTop="20dp"
+            android:textColor="#8C8C8C"
+            android:text="概况"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:background="@color/base_grey_line" />
+
+    <RelativeLayout
+        android:id="@+id/comment_total"
+        android:padding="20dp"
+        android:background="@color/base_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/comment"
+            android:hint="评论"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:src="@drawable/next"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="@dimen/common_margin"
+        android:background="@color/base_grey_line" />
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/nearby_scenic"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
+        <!--</LinearLayout>-->
+
+    <!--一以下内容gone-->
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_margin"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/comment_title_highlight"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="2.5dp"
+            android:contentDescription="@string/content_description"
+            android:minHeight="14dp"
+            android:src="@color/base_theme_highlight" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/comment_title_highlight"
+            android:gravity="center"
+            android:text="@string/scenery_detail_title_comment"
+            android:textColor="@color/base_text_summary"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/scenic_new_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/content_description"
+            android:paddingLeft="@dimen/common_margin"
+            android:paddingRight="@dimen/common_margin"
+            android:src="@drawable/ic_new_comment_selecter" />
+    </RelativeLayout>
+
+</LinearLayout>
