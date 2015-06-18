@@ -23,48 +23,48 @@ android {
             signingConfig signingConfigs.config
         }
     }
-    productFlavors {
-        store_tengxun {}
-        store_360 {}
-        store_91 {}
-        store_wandoujia {}
-        store_xiaomi {}
-        store_baidu_dev {}
-        store_yingyonghui {}
-        store_pp {}
-        store_anzhi {}
-        store_huawei {}
-        store_yingyongku {}
-        store_jifeng {}
-        store_3g {}
-        store_youyi {}
-        store_anfen {}
-        store_baidu_open {}
-        store_kuaiyong {}
-        store_pc6 {}
-        store_anzhuoyuan {}
-        store_mumayi {}
-        store_ndou {}
-        store_oppo {}
-        store_leshang {}
-        store_sougou {}
-        store_shizimao {}
-        store_maopaoke {}
-        store_paojiao {}
-        store_yiyonghui {}
-        store_meizu {}
-        store_mm {}
-        store_kaiqi {}
-        store_taobao {}
-        store_baoping {}
-        store_wo {}
-        store_zhuole {}
-        store_suning {}
-        store_mogu {}
-        store_netease_dev {}
-        store_tianyi_open {}
-
-    }
+//    productFlavors {
+//        store_tengxun {}
+//        store_360 {}
+//        store_91 {}
+//        store_wandoujia {}
+//        store_xiaomi {}
+//        store_baidu_dev {}
+//        store_yingyonghui {}
+//        store_pp {}
+//        store_anzhi {}
+//        store_huawei {}
+//        store_yingyongku {}
+//        store_jifeng {}
+//        store_3g {}
+//        store_youyi {}
+//        store_anfen {}
+//        store_baidu_open {}
+//        store_kuaiyong {}
+//        store_pc6 {}
+//        store_anzhuoyuan {}
+//        store_mumayi {}
+//        store_ndou {}
+//        store_oppo {}
+//        store_leshang {}
+//        store_sougou {}
+//        store_shizimao {}
+//        store_maopaoke {}
+//        store_paojiao {}
+//        store_yiyonghui {}
+//        store_meizu {}
+//        store_mm {}
+//        store_kaiqi {}
+//        store_taobao {}
+//        store_baoping {}
+//        store_wo {}
+//        store_zhuole {}
+//        store_suning {}
+//        store_mogu {}
+//        store_netease_dev {}
+//        store_tianyi_open {}
+//
+//    }
 }
 
 dependencies {
@@ -81,12 +81,12 @@ dependencies {
     compile 'com.loopj.android:android-async-http:1.4.7'
 }
 
-android.applicationVariants.all { variant ->
-    variant.outputs.each { output ->
-        output.processManifest.doLast {
-            def manifestFile = output.processManifest.manifestOutputFile
-            def updatedContent = manifestFile.getText('UTF-8').replaceAll("UMENG_CHANNEL_VALUE", "${variant.productFlavors[0].name}")
-            manifestFile.write(updatedContent, 'UTF-8')
-        }
-    }
-}
+//android.applicationVariants.all { variant ->
+//    variant.outputs.each { output ->
+//        output.processManifest.doLast {
+//            def manifestFile = output.processManifest.manifestOutputFile
+//            def updatedContent = manifestFile.getText('UTF-8').replaceAll("UMENG_CHANNEL_VALUE", "${variant.productFlavors[0].name}")
+//            manifestFile.write(updatedContent, 'UTF-8')
+//        }
+//    }
+//}
